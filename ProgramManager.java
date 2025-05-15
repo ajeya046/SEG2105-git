@@ -1,10 +1,13 @@
 
+//import java.security.SecurityPermission;
 import java.util.Scanner;
 
-public class MainOutput {
-    //Scanner Setup = new Scanner(System.in);;
+public class ProgramManager {
+    //Scanner Setup = new Scanner(System.in);
+    //ArrayList<UserAccount> userAccounts;
 
-    public MainOutput() {
+    public ProgramManager() {
+        //ArrayList<UserAccount> userAccounts = new ArrayList<UserAccount>();
         //Scanner Setup = new Scanner(System.in);
     }
 
@@ -13,7 +16,17 @@ public class MainOutput {
     }
 
     public static void organizerSetup() {
-        System.out.println("");
+        Scanner organizerSetup = new Scanner(System.in);
+        System.out.println("Hello, Organizer. ");
+        System.out.println("Organizer, what is your username for account creation... ");
+        String inputtedUsername = organizerSetup.nextLine();
+        System.out.println("Organizer, what is your password for account creation... ");
+        String inputtedPassword = organizerSetup.nextLine();
+        Organizer createdOrganizer = new Organizer(inputtedUsername, inputtedPassword);
+        createdOrganizer.welcome();
+        createdOrganizer.addUserAccount();
+        //return createdOrganizer;
+        //userAccounts.add(createdOrganizer);
     }
 
     public static void main(String[] args) {
@@ -24,6 +37,8 @@ public class MainOutput {
         switch (inputtedString) {
             case "participant":
                 System.out.println("Testing: partipant creation called... ");
+                organizerSetup();
+                //userAccounts.add(organizerSetup());
             case "organizer":
                 System.out.println("Testing: organizer creation called... ");
             case "admin":
