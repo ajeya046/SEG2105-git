@@ -12,7 +12,15 @@ public class ProgramManager {
     }
 
     public static void participantSetup() {
-
+        Scanner participantSetup = new Scanner(System.in);
+        System.out.println("Hello, Participant. ");
+        System.out.println("Participant, what is your username for account creation... ");
+        String inputtedUsername = participantSetup.nextLine();
+        System.out.println("Participant, what is your password for account creation... ");
+        String inputtedPassword = participantSetup.nextLine();
+        Participant createdParticipant = new Participant(inputtedUsername, inputtedPassword);
+        createdParticipant.welcome();
+        createdParticipant.addUserAccount();
     }
 
     public static void organizerSetup() {
@@ -29,6 +37,12 @@ public class ProgramManager {
         //userAccounts.add(createdOrganizer);
     }
 
+    public static void adminSetup() {
+        Admin createdAdmin = new Admin();
+        createdAdmin.addUserAccount();
+        createdAdmin.welcome();
+    }
+
     public static void main(String[] args) {
         Scanner Setup = new Scanner(System.in);
         System.out.println("Hello, user. Do you wish to create a (*Organizer*) or (*Participant*) account... ");
@@ -37,13 +51,17 @@ public class ProgramManager {
         switch (inputtedString) {
             case "participant":
                 System.out.println("Testing: partipant creation called... ");
-                organizerSetup();
+                participantSetup();
+                break;
                 //userAccounts.add(organizerSetup());
             case "organizer":
                 System.out.println("Testing: organizer creation called... ");
+                organizerSetup();
+                break;
             case "admin":
                 System.out.println("Testing: admin called... ");
-            
+                adminSetup();
+                break;
         }
     }
 }

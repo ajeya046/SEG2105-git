@@ -29,7 +29,7 @@ public class UserAccount {
     }
 
     public void welcome() {
-        System.out.println("Welcome " + username + ", ! You are logged in as " + typeOfAccount);
+        System.out.println("Welcome " + username + "! You are logged in as \"" + typeOfAccount + "\"");
     }
 
     public ArrayList<UserAccount> getUserAccounts() {
