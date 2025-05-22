@@ -45,7 +45,7 @@ public class ProgramManager {
 
     public static void main(String[] args) {
         Scanner Setup = new Scanner(System.in);
-        System.out.println("Hello, user. Do you wish to create a (*Organizer*) or (*Participant*) account... ");
+        System.out.println("Welcome to LocalLoop! Please enter your username below. (If you don't yet have an account please enter \"create\")");
         String inputtedString = Setup.nextLine();
         inputtedString = inputtedString.toLowerCase();
         switch (inputtedString) {
